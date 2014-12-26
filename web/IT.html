@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Initial Treatment</title>2
+        <meta charset="UTF-8">
+        <!--
+        <meta http-equiv="refresh" content="1">
+        -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="icon" href="/img/favChed.png" type="image/png" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+        <script src="jquery-2.js"></script> 
+
+
+        <!--
+        <script src="jquery.mobile-1.4.2/jquery.mobile-1.4.2.js"></script>
+                <link rel="stylesheet" href= "jquery.mobile-1.4.2/jquery.mobile-1.4.2.css" >
+        -->
+
+
+
+
+
+        <script src="js/parsley.js"></script>
+        <link rel="stylesheet" href= "css/mycss.css" >
+
+        <script src="js/main.js"></script>
+
+        
+
+
+    </head>
+    <body onload="myLot()">
+
+
+        <div data-role="main" style="background-color: transparent; height: 100%; " id="farmerArea" class="ui-content" >
+
+            <form name="joe" action="./InputsServlet" method="post" data-parsley-validate>
+
+            <div style="position: fixed; top: 0">
+
+            <input type="submit" value="REGISTER" name="register" id="registerid" >
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                <a href="dashboard.jsp" class="btn-group-sm" ><input value="BACK TO DASHBOARD"></a>
+           
+
+                    <input type="button" value="LOT NUMBER" name="register" id="registerid" onclick="myLot()" >
+
+                </div>
+                <center>
+
+                    <h1 id="inLot" onclick="myLot()">LOT NUMBER</h1>
+                    <br>
+                    <fieldset>
+
+                        <legend>Farmer Details</legend>
+                        <table>
+                            <tr>
+                                <td>
+                                    Region: &nbsp;  <select name="Regions" id='a' >   </select>
+                                </td>
+
+                                <td>
+                                    Farmer's Name : &nbsp; <input  type="text" data-parsley-pattern="\w*" data-parsley-length="[6,100]" id="farmerName" name="farmerName" style="text-transform: capitalize"    required="">
+                                </td>
+                                <td>
+                                    Sex :&nbsp;
+                                    <select name="sex" required="">
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                    </select>
+                                    
+                                </td>
+                                <td>
+
+                                    Age :  <input type="number" name ="age" min="0" style="width: 40px" id="age"  pattern="\d*" data-parsley-type="integer" required >
+
+                                </td>
+                            </tr>
+                        </table>
+                        <table>
+                            <tr>
+                                <td>
+                                    District ID :  
+
+                                    <select name="Districts" id='b' >
+
+                                    </select>
+                                </td>
+                                <td>
+                                    Farmer's Location :
+
+                                    <input type="text" name="location" id="location" style="text-transform: capitalize"  required>
+
+                                </td>
+
+                                <td>
+
+                                    National ID Type :
+
+                                    <select name="nationalid"> 
+
+                                        <option value="voters">Voter's ID </option>
+                                        <option value="NHIS">NHIS </option>
+                                        <option value='passport>'>Passport </option>
+
+
+                                    </select>
+                                </td>
+
+                                <td>
+                                    ID Number :
+
+                                    <input type='text' id='natID' name="natID" style="width: 100px;"  pattern="\d*"  required >
+                                </td>
+                            </tr>
+                        </table>
+                    </fieldset>
+
+
+
+                    <fieldset>
+                        <legend>Initial Treatment</legend>
+
+                        <table>
+                            <tr>
+                                <td>
+                                    Initial Treatment No :
+
+                                    <input type="text" id="initNum"  name="initNum" value="IT/"  style="width: 120px; text-transform: uppercase"  required>
+                                </td>
+
+                                <td>
+                                    Tree Removal No :
+
+                                    <input type="text" id="treeRemovalID" value="TR/" name="treeRemovalID" style="width: 120px; text-transform: uppercase" required="">
+                                </td>
+                                <td>
+                                    Initial Treatment Date :
+
+                                    <input type="text" required="" name="itDate" id="itDate" style="width: 120px; background-color:#FFe227;color: #000000" maxlength="10" placeholder="DD-MM-YY" onkeyup="addDateSeparator(event,this,'dd-mm-yyyy')" >
+                                </td>
+                                <td>
+                                    Old Farm No. :
+                                    <input type="text" style="text-transform: uppercase" id="oldFarmID" required="" name="oldFarmID">
+                                </td>
+                            </tr>
+                        </table>
+                        <table>
+                            <tr>
+                                <td>
+                                    Sector Number :
+
+                                    <input type="number" onkeyup="sectNo3()" maxlength="3" name="sectNo" id="sectNo" min="0" style="width: 80px" pattern="\d*" data-parsley-type="integer" required="">
+                                </td>
+                                <td>
+                                    Block ID :  
+
+                                    <input type="number" onkeyup="check2()" maxlength="2" name="distNo" id="distNo" min="0" style="width: 80px" pattern="\d*" data-parsley-type="integer" required="" >
+                                </td>
+                                <td>
+                                    Cocoa Area ID :
+
+                                    <input type="number" maxlength="2" onkeyup="caID3()" name="caID" id="caID" min="0" style="width: 80px" pattern="\d*" data-parsley-type="integer" required="">
+                                </td>
+                                <td>
+                                    Outbreak ID :
+
+                                    <input type="text" maxlength="3" onkeyup="obNo3()" name="obNo" id="obNo"  style="width: 80px; text-transform: uppercase" required data-parsley-type="alphanum">
+                                </td>
+                                <td>
+                                    Farm ID :
+
+                                    <input type="number" maxlength="3" onkeyup="farmNo3()" name="farmNo" min="0" id="farmNo" style="width: 80px" pattern="\d*" data-parsley-type="integer" required="">
+                                </td>
+
+                            </tr>
+                        </table>
+                        <fieldset>
+                            <table>
+                                <tr>
+                                     <!--
+                                    <td>
+                                        Outbreak Size :
+
+                                        <input type="text" name="obSize" id="obSize"   >
+                                    </td>
+                                   
+                                    <td>
+                                        Farms in Outbreak :
+
+                                        <input type="text" name="farmObSize" id="farmObSize"  required="">
+                                    </td>
+                                    -->
+                                    <td>
+                                        Est. Trees in Outbreak Area :
+
+                                        <input type="text"  name="treesOb" id="treesOb" >
+                                    </td>
+
+                                    <td>
+                                        Cocoa Type :
+
+                                        <select name="Ctype">
+
+                                            <option value="mixed">Mixed</option>
+                                            <option value="amelonado">Amelonado</option>
+                                            <option value="amazonia">Amazonia</option>
+
+
+
+                                            <option value="hybrid">Hybrid</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <table>
+                                <tr>
+
+                                    <td>
+                                        Farm Size :
+
+                                        <input type="text"  onchange="" name="farmSize" id="farmSize" style="width: 80px" required="">
+                                    </td> 
+                                    <td>
+                                        Trees Cut :
+
+                                        <input type="number" step="any" min="0" name="treesCut" id="treesCut" style="width: 80px" required="">
+                                    </td>
+                                    <td>
+                                        Treated Area :
+
+                                        <input type="text" onchange="calcUntreat()"  name="treatedArea" id="treatedArea" style="width: 80px"  required="">
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <table>
+                                <tr>
+
+
+                                    <td>
+                                        Untreated Farm Area :
+
+                                        <p id="genUntreated" name="genUntreated">--.--</p>
+                                    </td>
+                                    <td>
+                                        Trees Cut By :
+                                        
+                                        <input onchange="calcUntreat()" style="text-transform: uppercase;" type="text" required name="cutters" id="cutters">
+                                            <!--
+                                        <select name="cutters">
+
+                                            <option value="fosdak">FOSDAK ENTERPRISE</option>
+                                            <option value="ched">CHED</option>
+
+                                        </select>
+                                            -->
+                                    </td>
+
+
+                                    <td>
+                                        Cocoa Age Class : <br>
+                                        
+                                        <select name="cocoaClass" required >
+                                            <option value="A">A</option>
+                                            <option value="B">B</option>
+                                            <option value="C">C</option>
+                                            <option value="D">D</option>
+                                            
+                                        </select>
+
+                                        
+                                    </td>
+
+                                </tr>
+                            </table>
+
+                        </fieldset>
+                        <fieldset>
+                            <legend>Administrative Details </legend>
+                            <table>
+                                <tr>
+                                    <td>
+                                        District Officer Name :
+
+                                        <input type="text" onchange="requi()" name="distOfficer" style="text-transform: capitalize;" id="distOfficer" data-parsley-pattern="\w*"  required="">
+                                    </td>
+
+                                    <td>
+                                        District Officer Date Signed 
+                                        <input type="text" id="distSigned" name="distSigned" required="" maxlength="10" placeholder="DD-MM-YY" onkeyup="addDateSeparator(event,this,'dd-mm-yyyy')"> 
+                                    </td>
+                                    <td>
+                                        Technical Assistant :
+
+                                        <input type="text" style="text-transform: capitalize;" id="tAssist" name="tAssist" required="">
+                                    </td>
+                                    <td>
+
+                                        TA Date Signed 
+                                        <input type="text" id="taSigned" name="taSigned" required="" maxlength="10" placeholder="DD-MM-YY" onkeyup="addDateSeparator(event,this,'dd-mm-yyyy')" > 
+                                    </td>
+                                </tr>
+                           
+                                <tr>
+                                    <td colspan="2">
+                                        Reg Officer Name: 
+                                        <input type="text" id="regOffName" name="regOffName" style="text-transform: capitalize;" required="">
+
+                                    </td>
+                                    <td colspan="2">
+                                        Reg Officer Date Signed :
+
+                                        <input type="text" id="regSigned" name="regSigned" required="" placeholder="DD-MM-YY" maxlength="10"  onkeyup="addDateSeparator(event,this,'dd-mm-yyyy')">
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+
+                                    <td><input type="hidden" id="lotNumbers" name="lotNumbers"></td>
+                                </tr>
+                            </table>
+                        </fieldset>
+
+                    </fieldset>
+
+            </form>
+        </center>
+
+    </div>
+</body>
+</html>

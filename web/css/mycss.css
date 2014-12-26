@@ -1,0 +1,92 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 23, 2014, 1:56:46 PM
+    Author     : audax
+*/
+
+
+            body
+            {
+                //zoom: 80%;
+                font-size: 75%;
+                background-color: #22aadd;
+               // azimuth: behind;
+            }
+            zoom {
+                zoom: 70%;
+            }
+
+            table
+            {
+                padding: 20px;
+                white-space: nowrap;
+                //table-layout: fixed;
+                width: 100%;
+
+            }
+
+            label
+            {
+                //width: 4em;
+                float: left;
+                text-align: right;
+                margin-right: 0.5em;
+                display: block
+            }
+
+            .submit input
+            {
+                margin-left: 4.5em;
+            } 
+
+
+            input
+            {
+                color: #781351;
+                background: #fee3ad;
+                border: 1px solid #781351
+            }
+
+
+            fieldset
+            {
+                display: inline-block;
+                margin-top: 20px;
+                border: 3px solid #781351;
+                //width: 70em
+            }
+
+            legend
+            {
+
+                color: #fff;
+                background: #ffa20c;
+                border: 1px solid #781351;
+                padding: 2px 6px;
+                font-size: 20px;
+            } 
+
+            #obSize,#treesOb,#sectNo,#farmNo,#distNo,#caID,#obNo
+            {
+
+                width: 50px;
+
+            }
+            
+            #taSigned,#distSigned,#regSigned,#itDate
+            {
+                width: 85px;
+                
+            }
+            
+            
+            #distOfficer,#tAssist,#regOffName
+            {
+                
+                text-transform: capitalize;
+                
+            }

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>GRANT MONITOR</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--
+          <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        -->
+          <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="js/bootstrap.js"></script>
+
+        <script src="js/bootstrap.min.js"></script>
+        
+        <script src="jqFiles/js/jquery.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <script src="jquery-2.js"></script> 
+
+
+        <link rel="stylesheet" href= "jquery.mobile-1.4.2/jquery.mobile-1.4.2.css" >
+
+        <script src="jquery.mobile-1.4.2/jquery.mobile-1.4.2.js"></script>
+        <script src="js/parsley.js"></script>
+
+    </head>
+    <body>
+        <div data-role="page" id="pageone" class="ui-body-a" data-ajax="false"> 
+
+            <center>
+
+
+                <br>
+                <br>
+                <br>
+                <br>
+                <a href="index.html">
+                <image src="img/LOGO.jpg" alt="Image Couldn't load" style="width: 320px; height: 200px;"/>
+                </a>
+                <br>
+                <br>
+                <br>
+
+                <form action="./AlternateSession" method="POST" data-parsley-validate >
+                    <table>
+                        <tr>
+                            <td><h3>Username</h3></td>
+                            <td>&nbsp;&nbsp;</td>
+                            <td><input type="text" name="userN" id="userN" required="true"></td>
+
+                        </tr>
+
+                        <tr>
+                            <td><h3>Password</h3></td>
+                            <td>&nbsp;&nbsp;</td>
+                            <td><input type="password" name="passW" id="passW"  required="true"></td>
+
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>&nbsp;&nbsp</td>
+                            <td></td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td colspan="3" ><input type="submit" value="LOGIN" name="LOGIN" class="ui-btn-a"></td>
+
+                        </tr>
+
+
+
+                    </table>
+
+
+                </form>
+            </center>
+
+            <div data-role="footer" class="ui-bar-a" data-position="fixed">
+
+                <center>
+                    <marquee> &copy; CHED 2014 </marquee>
+                </center>
+            </div>
+
+        </div>
+        
+   
+        
+
+    </body>
+</html>
