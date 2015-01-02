@@ -426,7 +426,7 @@ function rehCut()
 {
     
     var tC = document.getElementById("rehTreesCut").value;
-    var costa = tC * -0.53;
+    var costa = tC * 0.53;
     
     document.getElementById("rehCost").innerHTML = costa.toFixed(2);
     
